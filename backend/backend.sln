@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backend", "backend\backend.csproj", "{1C879AA9-D477-40EC-84C2-161E5AB1C360}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "database", "database\database.csproj", "{914E1D43-F4CD-49B9-A780-820273305DA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backend.test", "backend.test\backend.test.csproj", "{4541BD48-B577-4F17-8D39-EF062D0C9F74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C879AA9-D477-40EC-84C2-161E5AB1C360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C879AA9-D477-40EC-84C2-161E5AB1C360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C879AA9-D477-40EC-84C2-161E5AB1C360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C879AA9-D477-40EC-84C2-161E5AB1C360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{914E1D43-F4CD-49B9-A780-820273305DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{914E1D43-F4CD-49B9-A780-820273305DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{914E1D43-F4CD-49B9-A780-820273305DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{914E1D43-F4CD-49B9-A780-820273305DA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4541BD48-B577-4F17-8D39-EF062D0C9F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4541BD48-B577-4F17-8D39-EF062D0C9F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4541BD48-B577-4F17-8D39-EF062D0C9F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4541BD48-B577-4F17-8D39-EF062D0C9F74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

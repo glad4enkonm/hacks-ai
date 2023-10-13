@@ -1,0 +1,20 @@
+version: "3.5"
+services:
+  db:
+    image: mariadb:10.3.9
+    ports: # порт открыт только для проверки, должен быть закрыт на рабочей машине
+      - '3306:3306'
+    volumes:
+      - ./tmpdb:/var/lib/mysql:rw
+      - ../database/Docker/utf8.cnf:/etc/mysql/conf.d/custom.cnf
+      #- ../database/MigrationsWithEnv:/docker-entrypoint-initdb.d:ro # раскомментировать для загрузки Migrations
+    env_file: .env # здесь секреты, структуру можно посмотреть в _env
+    restart: unless-stopped
+    networks:
+      - wire
+
+
+networks:
+  wire:
+    driver: bridge
+

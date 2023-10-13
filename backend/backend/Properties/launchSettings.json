@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:45379",
+      "sslPort": 44300
+    }
+  },
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5295",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "",
+        "BACKEND_DATABASE_SERVER":"",
+        "BACKEND_DATABASE_USER":"",
+        "BACKEND_USER_HOST_FOR_DATABASE": "",
+        "BACKEND_DATABASE_PASSWORD": "",
+        "BACKEND_SECRET":"",
+        "BACKEND_HASH_SALT":"",
+        "MYSQL_DATABASE":"",
+        "PY_GRPC_PORT": "",        
+      }
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

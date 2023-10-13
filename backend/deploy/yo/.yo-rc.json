@@ -1,0 +1,71 @@
+{
+  "generator-micron": {
+    "entities": [{
+      "name": "User",
+      "generation": {
+        "migrations": true,
+        "repository": true,
+        "controller": "User",
+        "store": true,
+        "isHistoryEnabled": true
+      },
+      "controller": {
+        "operations": "CRUD"
+      },
+      "props": [
+        { "name": "Name", "type": "varchar(500)", "unique": false, "default": "", "null": false  },
+        { "name": "Login", "type": "varchar(100)", "unique": true, "default": "", "null": false  },
+        { "name": "PasswordHash", "type": "varchar(500)", "unique": false, "default": "", "null": false  },
+        { "name": "Description", "type": "varchar(1000)", "unique": false, "default": "NULL", "null": true  }
+      ],
+      "init": [
+        {"name":  "Administrator", "description":  "Управляет настройками"}
+      ],
+      "relations": [
+        {"prop": "", "table": "Customer"}
+      ]
+    },{
+      "name": "UserRole",
+      "generation": {
+        "migrations": true,
+        "repository": true,
+        "controller": "User",
+        "store": false,
+        "isHistoryEnabled": false
+      },
+      "controller": {
+        "operations": ""
+      },
+      "props": [
+        { "name": "Name", "type": "varchar(500)", "unique": true, "default": "", "null": false  },
+        { "name": "Description", "type": "varchar(1000)", "unique": false, "default": "NULL", "null": true  }
+      ],
+      "init": [
+        {"name":  "Administrator", "description":  "Управляет сотрудниками и кодами"},
+        {"name":  "Operator", "description":  "Сотрудник, создаёт коды"}
+      ],
+      "relations": []
+    },{
+      "name": "UserToUserRole",
+      "generation": {
+        "migrations": true,
+        "repository": true,
+        "controller": "User",
+        "store": false,
+        "isHistoryEnabled": false
+      },
+      "controller": {
+        "operations": "CRD"
+      },
+      "props": [
+      ],
+      "init": [
+        { "UserId":  1, "UserRoleId":  1 }
+      ],
+      "relations": [
+        {"prop": "", "table": "User"},
+        {"prop": "", "table": "UserRole"}
+      ]
+    }]
+  }
+}
