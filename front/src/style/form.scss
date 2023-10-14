@@ -1,0 +1,49 @@
+.input-group {
+  display: block;
+  margin: 0.5rem;
+
+
+  label {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    padding: .5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: .5rem;
+    width: 100%;
+  }
+
+  input[type="text"].inline {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+textarea {
+  display: block;
+  border: 1px solid var(--dark-gray);
+  padding: .5rem 1rem;
+  resize: none;
+  border-radius: .35rem;
+  width: 100%;
+}
+
+input[type="number"] {
+  border: 1px solid var(--dark-gray);
+  padding: .5rem 1rem;
+  border-radius: .35rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}

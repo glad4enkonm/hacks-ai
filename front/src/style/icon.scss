@@ -1,0 +1,17 @@
+.icon svg {
+  display: block; /* convert the <svg> elements to block-level elements */
+  height: 24px;
+  width: 24px;
+  max-height: 100%; /* limit the height of the icons to the height of the container */
+  max-width: 100%; /* limit the width of the icons to the width of the container */
+  margin-right: 25px;
+}
+
+.icon img {
+  display: block; /* convert the <svg> elements to block-level elements */
+  height: 24px;
+  width: 24px;
+  max-height: 100%; /* limit the height of the icons to the height of the container */
+  max-width: 100%; /* limit the width of the icons to the width of the container */
+  margin-right: 25px;
+}

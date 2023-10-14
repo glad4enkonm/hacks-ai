@@ -1,0 +1,38 @@
+.btn {
+  display: inline-block;
+  padding: .5rem 1rem;
+  border-radius: .35rem;
+  text-decoration: none;
+  cursor: pointer;
+
+  &_primary {
+    background: var(--mazarine-blue);
+    color: var(--lynx-white);
+  }
+
+  &_big {
+    padding: .625rem 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  &_block {
+    display: block;
+    width: 100%;
+  }
+}
+
+.btn-group {
+  margin: 1rem 0;
+
+  .btn {
+    margin: 0 .25rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

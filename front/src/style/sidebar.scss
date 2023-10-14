@@ -1,0 +1,30 @@
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  background: var(--mazarine-blue);
+  width: 150px;
+  padding: 2rem 0;
+
+  &__item {
+    $self: &;
+    color: var(--lynx-white);
+    padding: 1rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+
+    &:hover,
+    &_active {
+      background: var(--pico-void);
+    }
+  }
+}
+
+.router-link-active {
+  background: var(--pico-void);
+}
+
+

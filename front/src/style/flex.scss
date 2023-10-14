@@ -1,0 +1,33 @@
+.flx {
+  display: flex;
+}
+
+.flx-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flx-aic {
+  display: flex;
+  align-items: center;
+}
+
+.flx-jcc {
+  display: flex;
+  justify-content: center;
+}
+
+.flx-space-btw {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flx-aic-jcc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flx-item-auto {
+  flex: 1 1 auto;
+}
