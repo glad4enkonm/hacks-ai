@@ -3,15 +3,19 @@ from flask import Flask, render_template
 from ipyleaflet import Map, Marker
 from flask import Flask
 from ipywidgets.embed import embed_minimal_html
+import os
 
+from download_data import load, load_district_json
 from download_data import load_district_json
-from download_data import load_district_json
-from utils import load_json, project_root
+from utils import load_json, project_root, data_path
 from ipywidgets import HTML
 
 app = Flask(__name__)
 
 cities_data = load_json('cities_data', Path(project_root))
+
+if (not os.path.exists(data_path)) or (not os.listdir(data_path)):
+    load()
 
 
 @app.route("/")

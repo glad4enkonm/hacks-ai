@@ -81,9 +81,13 @@ def download_data(city, districts):
         to_pkl(df, district)
 
 
-if __name__ == '__main__':
+def load():
     cities_data = load_json('cities_data', Path(project_root))
 
     pprint(cities_data)
 
     download_data(**cities_data['spb'])
+
+
+if __name__ == '__main__':
+    load()
