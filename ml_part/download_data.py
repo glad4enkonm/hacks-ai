@@ -1,12 +1,17 @@
 import json
 from collections import defaultdict
+from pathlib import Path
+from pprint import pprint
 from typing import Dict
 import osmnx as ox
 import pandas as pd
 from osmnx._errors import InsufficientResponseError
+from logger_ import get_logger
 
-from districts import districts_spb
-from utils import read_yaml, to_pkl, to_json, load_json
+
+from utils import read_yaml, to_pkl, to_json, load_json, project_root
+
+logger = get_logger(__name__)
 
 
 def get_district_poly(district, city):
@@ -54,7 +59,7 @@ def load_tags():
     return dict(tags)
 
 
-def download_data(city):
+def download_data(city, districts):
     """
     dump data into data dir
     """
@@ -65,9 +70,9 @@ def download_data(city):
 
     tags = load_tags()
 
-    for district in districts_spb:
+    for district in districts:
         # TODO: add logging
-        print(f'download data for {city}, {district}')
+        logger.info(f'download data for {city}, {district}')
         district_poly = get_district_poly(district, city)
 
         df = load_tags_inside_polygon(district_poly, tags)
@@ -78,4 +83,8 @@ def download_data(city):
 
 
 if __name__ == '__main__':
-    download_data(city="Санкт-Петербург, Russia")
+    cities_data = load_json('cities_data', Path(project_root))
+
+    pprint(cities_data)
+
+    download_data(**cities_data['spb'])
