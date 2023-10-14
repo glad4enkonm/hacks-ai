@@ -1,13 +1,12 @@
 from pathlib import Path
 from flask import Flask, render_template
-import ipyleaflet
 from ipyleaflet import Map, Marker
 from flask import Flask
 from ipywidgets.embed import embed_minimal_html
 
 from download_data import load_district_json
 from download_data import load_district_json
-from ml_part.utils import load_json, project_root
+from utils import load_json, project_root
 from ipywidgets import HTML
 
 app = Flask(__name__)
@@ -31,4 +30,4 @@ def get_district_coords(district):
         return load_district_json(district)
     return {}
 
-app.run(port=5001)
+#app.run(port=5001)
