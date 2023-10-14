@@ -7,6 +7,7 @@ project_root = Path(Path(__file__).parents[0])
 
 data_path = Path(project_root, 'data')
 
+
 def read_yaml(file):
     with open(Path(project_root, file)) as f:
         return yaml.load(f, Loader=yaml.SafeLoader)
@@ -21,7 +22,7 @@ def load_pkl(name):
 
 
 def to_json(name, data):
-    with open(Path(data_path,  f"{name}.json"), 'w') as f:
+    with open(Path(data_path, f"{name}.json"), 'w') as f:
         json.dump(data, f)
 
 

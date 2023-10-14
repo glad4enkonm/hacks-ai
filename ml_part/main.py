@@ -5,7 +5,7 @@ from typing import Dict
 import osmnx as ox
 import pandas as pd
 from geopy.distance import geodesic
-
+from logger_ import get_logger
 from utils import read_yaml, load_pkl, project_root
 
 ox.settings.use_cache = True
@@ -15,6 +15,8 @@ pd.options.mode.chained_assignment = None
 pd.set_option('display.max_columns', 25)
 pd.set_option('display.max_rows', 10000)
 pd.set_option('display.width', 1000)
+
+logger = get_logger(__name__)
 
 
 def load_from_pkls():
@@ -111,6 +113,7 @@ def calc_second_condition():
     result_df = pd.DataFrame(lst, columns=['Район', 'Образовательное уч.', 'Neg points'])
     result_df.set_index('Район', inplace=True)
     print(result_df)
+
     return result_df
 
 

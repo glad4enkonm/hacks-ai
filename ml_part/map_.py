@@ -1,18 +1,15 @@
 from IPython.core.display_functions import display
-from ipyleaflet import Map, Marker
+from ipyleaflet import Map, Marker, Polygon
+from ipywidgets import HTML
 
-center = (52.204793, 360.121558)
 
-m = Map(center=center, zoom=15)
+m = Map(center=(59.9311, 30.3609), zoom=15)
 
-marker = Marker(location=center, draggable=True)
-m.add_layer(marker)
+html_layer = HTML()
+html_layer.value = "<h1>Hello, World!</h1>"
 
-m.save(outfile='map.html')
+# Add the HTML layer to the map
+m.add(html_layer)
 
-# Now that the marker is on the Map, you can drag it with your mouse,
-# it will automatically update the `marker.location` attribute in Python
 
-# You can also update the marker location from Python, that will update the
-# marker location on the Map:
-marker.location = (50, 356)
+m.save('map.html')

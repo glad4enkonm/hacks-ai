@@ -71,7 +71,6 @@ def download_data(city, districts):
     tags = load_tags()
 
     for district in districts:
-        # TODO: add logging
         logger.info(f'download data for {city}, {district}')
         district_poly = get_district_poly(district, city)
 
