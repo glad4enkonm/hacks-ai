@@ -31,7 +31,9 @@ export default defineComponent({
   },
   computed: {
     userList() {
-      return this.userStore.userList
+      return  (this.searchText != "") ? this.userStore.userList
+        .filter(u => u.login.includes(this.searchText) || u.name?.includes(this.searchText)) 
+          :this.userStore.userList
     }
   },
   async created() {
@@ -55,7 +57,7 @@ export default defineComponent({
 
           <button class="btn btn_order btn_big" @click="createUser()"> {{ ru.user.create }}</button>
           <div className="flx-aic">
-            <label>{{ ru.code.search }}</label>
+            <label>{{ ru.map.search }}</label>
             <div class="input-group">
               <input class="inline" type="text" required v-model="searchText" />
             </div>

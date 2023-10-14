@@ -1,7 +1,6 @@
 export const ru = {
-  code: {
-    caption: "Сертификаты",
-    captionShort: "Серт.",
+  map: {
+    caption: "Карта",    
     inputValue: "Ввести значение",
     create: "Создать",
     update: "Сохранить",
@@ -30,51 +29,6 @@ export const ru = {
     loginEmpty: "Имя пользователя не может быть пустым",
     emailWrong: "Электронная почта указана не верно"
   },
-  templateCreate: {
-    dataLoadedMsg: "Данные загружены",
-    createdMsg: "Шаблон создан",
-    updatedMsg: "Шаблон обновлен",
-    offsetIsIncorrect: "Провертьте отступы",
-    noImageSelected: "Выберите изображение",
-    create: "Создать",
-    update: "Сохранить",
-    captionNew: "Новый шаблон",
-    captionEdit: "Шаблон редактирование",
-    name: "Название",
-    verticalOffset: "Отступ сверху",
-    horisontalOffset: "Отступ слева",
-    content: "Изображение PNG",
-    templateId: "Идентификатор",
-  },
-  codeCreate: {
-    selectTemplatePlaceholder: "Выберите шаблон",
-    template: "Шаблон",
-    captionNew: "Новый сертификат",
-    captionEdit: "Cертификат редактирование",
-    userDataLoadedMsg: "Данные загружены",
-    createdMsg: "Сертификат создан",
-    updatedMsg: "Сертификат обновлен",
-    balanceIsIncorrect: "Сумма должна быть больше нуля",
-    completeIsIncorrect: "Дату завершения можно только удалить",
-    templateNotSelected: "Выберите шаблон",
-    messageOrCaptionEmpty: "Сообщение или заголовок сообщения пуст",
-    emailWrong: "Почта должна быть либо пуста либо правильно заполнена",
-    value: "Значение",
-    name: "Кому имя",
-    email: "Почта",
-    telegram: "Telegram",
-    whatsapp: "WhatsApp",
-    balance: "Сумма",
-    description: "Описание",
-    created: "Создан",
-    sent: "Отправлен",
-    codeId: "Идентификатор",
-    completed: "Завершен",
-    message: "Сообщение",
-    messageCaption: "Заголовок сообщения",
-    messageDefault: "Здравствуйте, поздравляем! Кто-то сделал вам хороший подарок",
-    messageCaptionDefault: "Подарочный сертификат от Vistelcorp"
-  },
   userCreate: {
     userId: "Идентификатор",
     name: "Имя",
@@ -91,13 +45,6 @@ export const ru = {
     wrongPassword: "Длина паролей должна составлять не менее 10 символов.\n" +
       "Пароли должны содержать по крайней мере одну заглавную букву, одну строчную букву, одну цифру и один специальный символ @$!%*#?",
     completed: "Завершен"
-  },
-  template: {
-    caption: "Шаблоны",
-    dataLoadedMsg: "Шаблоны загружены",
-    create: "Создать",
-    update: "Сохранить",
-    search: "Поиск",
   },
   user: {
     caption: "Люди",

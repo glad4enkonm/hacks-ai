@@ -8,8 +8,6 @@ import { defineComponent } from "vue";
 import { useToast } from 'vue-toastification'
 import { useErrorStore } from "@/stores/error";
 import { deepClone, setPropValuesIfDefinedInBothObjects } from "@/util/diff";
-import { customerStore } from "@/stores/customer";
-import type { ICode } from "@/model/code";
 import { useUserStore } from "@/stores/user";
 import ru from "@/util/text";
 import { getRandomNumber } from "@/util/random";
@@ -108,7 +106,7 @@ export default defineComponent({
   },
   async created() {
     await this.userStore.loadUserList()
-    toast.success(ru.codeCreate.userDataLoadedMsg)
+    toast.success(ru.userCreate.userDataLoadedMsg)
     if (this.$route.params.id) { // редактирование, загружаем
       this.isEdit = true
       this.userObject =
@@ -138,7 +136,7 @@ export default defineComponent({
           </div>
         </div>
         <button class="btn btn_order btn_big" @click="isEdit ? editUser() : createUser()">
-          {{ isEdit ? ru.code.update : ru.code.create  }}</button>
+          {{ isEdit ? ru.map.update : ru.map.create  }}</button>
 
       </section>
     </div>
