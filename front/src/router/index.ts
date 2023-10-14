@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import User from "@/views/User.vue";
+import Metrics from "@/views/Metric.vue";
 import { useUserStore } from "@/stores/user";
 
 const router = createRouter({
@@ -22,6 +23,12 @@ const router = createRouter({
       name: "user",
       meta: {authRequired: true},
       component: User,
+    },
+    {
+      path: "/metric",
+      name: "metric",
+      meta: {authRequired: true},
+      component: Metrics,
     },
     {
       path: "/user/:id",

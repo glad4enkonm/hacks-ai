@@ -53,6 +53,11 @@ export const ru = {
     dataLoadedMsg: "Пользователи загружены",
     create: "Добавить",
   },
+  metric: {
+    caption: "Метрики",        
+    dataLoadedMsg: "Пользователи загружены",
+    create: "Добавить",
+  },
   registration: {
     caption: 'Регистрация',
     name: 'ФИО',

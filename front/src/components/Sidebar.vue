@@ -27,6 +27,10 @@ export default defineComponent({
           key: ru.map.caption,
         },
         {
+          to: '/metric',
+          key: ru.metric.caption,
+        },
+        {
           to: '/user',
           key: ru.user.caption,
         }
@@ -36,6 +40,10 @@ export default defineComponent({
         {
           to: '/map',
           key: ru.map.caption,
+        },
+        {
+          to: '/metric',
+          key: ru.metric.caption,
         }
       ];
     }
