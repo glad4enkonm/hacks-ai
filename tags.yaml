@@ -1,12 +1,12 @@
 education:
-    - amenity: ['school', 'university', 'college', 'music_school']
+    amenity: ['school', 'university', 'college', 'music_school']
 
 positive:
-    - leisure: ['swimming_pool']
+    amenity: ['swimming_pool']
+    leisure: ['park']
 
 negative:
-    - amenity: ['bar', 'biergarten', 'pub']
-
+    amenity: ['bar', 'biergarten', 'pub', 'fast-food', 'food_court']
 
 #
 #  'Плавательный бассейн', 'Стадион', Манеж,Фитнес-клуб,Спортивный зал,Велодорожка,Катки, ледовые поля для катания на коньках
