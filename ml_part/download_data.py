@@ -1,4 +1,5 @@
 import json
+import os
 from collections import defaultdict
 from pathlib import Path
 from pprint import pprint
@@ -7,6 +8,7 @@ import osmnx as ox
 import pandas as pd
 from osmnx._errors import InsufficientResponseError
 from logger_ import get_logger
+from utils import data_path
 
 
 from utils import read_yaml, to_pkl, to_json, load_json, project_root
@@ -82,6 +84,9 @@ def download_data(city, districts):
 
 
 def load():
+    if not os.path.exists(data_path):
+        os.makedirs(data_path)
+
     cities_data = load_json('cities_data', Path(project_root))
 
     pprint(cities_data)

@@ -17,4 +17,5 @@ ENV PATH="/home/appuser/.local/bin:${PATH}"
 RUN pip install --user -r requirements.txt
 
 COPY --chown=appuser:appuser . .
+RUN python download_data.py
 CMD [ "gunicorn", "-b" , "0.0.0.0:5001", "app:app"]
