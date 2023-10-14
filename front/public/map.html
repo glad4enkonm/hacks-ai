@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>heatlayer count example</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/v3.20.1/css/ol.css" type="text/css">
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script src="https://openlayers.org/en/v3.20.1/build/ol.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+    <script>
+      var raster = new ol.layer.Tile({
+        source: new ol.source.OSM()
+      });
+      
+      var heatlayer = new ol.layer.Heatmap({
+        source: new ol.source.Vector(),
+        blur: parseInt(14),
+        radius: parseInt(10)
+      });
+      
+            var adddata = [[104.807799,30.232233],[106.803599,31.233225]];
+      //addfeature
+      for(var i = 0;i < adddata.length ; i++){
+        var feature = new ol.Feature({
+          geometry:new ol.geom.Point([adddata[i][0],adddata[i][1]])
+        });
+        heatlayer.getSource().addFeature(feature);
+    }
+      
+
+      var map = new ol.Map({
+        layers: [raster,heatlayer],
+        target: 'map',
+        controls: ol.control.defaults({
+          attributionOptions: /** @type {olx.control.AttributionOptions} */ ({
+            collapsible: false
+          })
+        }),
+        view: new ol.View({
+		  
+          center:[104.07, 30.7],
+          zoom: 2
+        })
+      });
+
+      map.on('click', function(event){
+        var features = heatlayer.getSource().getFeatures()
+        alert('count: '+features.length);
+      });
+       
+    </script>
+  </body>
+</html>

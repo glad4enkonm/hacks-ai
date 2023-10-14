@@ -86,7 +86,7 @@ export default defineComponent({
             </div>
           </div>
         </div>
-
+        <iframe id="f1" ref="frame1" :src="'/map.html'"></iframe>
 
 
       </section>
@@ -128,4 +128,13 @@ export default defineComponent({
 .photo-url {
   height: 32px;
 }
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    width: 1000px;
+    height: 800px;
+}
+
 </style>

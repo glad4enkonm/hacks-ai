@@ -26,7 +26,7 @@ export default defineComponent({
       };
       await userStore.auth(user);
       this.error = this.errorStore.apiError;
-      this.$router.push({ name: "code" });
+      this.$router.push({ name: "map" });
     },
     handleLoginChange() {
       this.errorStore.apiError = ''
