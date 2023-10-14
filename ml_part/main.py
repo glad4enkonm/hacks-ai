@@ -10,10 +10,11 @@ from utils import read_yaml, load_pkl, project_root
 
 ox.settings.use_cache = True
 
+pd.options.mode.chained_assignment = None
+
 pd.set_option('display.max_columns', 25)
 pd.set_option('display.max_rows', 10000)
 pd.set_option('display.width', 1000)
-
 
 
 def load_from_pkls():
@@ -91,13 +92,14 @@ def calc_second_condition():
         # print(df_education)
 
         df_negative['center'] = df_negative['geometry'].apply(lambda a: a.centroid)
+
         points_negative = df_negative['center'].tolist()
 
         df_education['center'] = df_education['geometry'].apply(lambda a: a.centroid)
 
         for k in df_education[['name', 'center']].itertuples():
             education_point = k.center
-            radius_meters = 150 #
+            radius_meters = 150
 
             points_inside_circle = []
             for point in points_negative:
