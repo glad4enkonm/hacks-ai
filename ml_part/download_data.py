@@ -19,7 +19,6 @@ def load_tags_inside_polygon(polygon, tags: Dict):
     try:
         amenities = ox.features_from_polygon(polygon, tags=tags)
         amenities.reset_index(inplace=True)
-        print(amenities.columns)
         amenities = amenities[['osmid', 'name', 'geometry', 'amenity', 'leisure']]
 
         df = amenities[['amenity', 'leisure']].bfill(axis=1)
@@ -47,6 +46,14 @@ def load_district_json(district):
         return {}
 
 
+def load_tags():
+    tags = defaultdict(list)
+    for d in read_yaml('tags.yaml').values():
+        for k, v in d.items():
+            tags[k].extend(v)
+    return dict(tags)
+
+
 def download_data(city):
     """
     dump data into data dir
@@ -56,18 +63,11 @@ def download_data(city):
 
     dfs = {}
 
-    """
-    TODO: Make function
-    Make format like this:
-    tags = {'amenity': ['school', 'university', 'college', 'music_school', 'pub', 'bar', 'food_court']}
-    """
-    tags = defaultdict(list)
-    for d in read_yaml('tags.yaml').values():
-        for k, v in d.items():
-            tags[k].extend(v)
-    tags = dict(tags)
+    tags = load_tags()
 
     for district in districts_spb:
+        # TODO: add logging
+        print(f'download data for {city}, {district}')
         district_poly = get_district_poly(district, city)
 
         df = load_tags_inside_polygon(district_poly, tags)

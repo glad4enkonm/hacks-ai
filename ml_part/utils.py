@@ -12,19 +12,18 @@ def read_yaml(file):
 
 
 def to_pkl(df, name):
-    df.to_pickle(f"data/{name}.pkl")
+    df.to_pickle(Path(project_root, 'data', f"{name}.pkl"))
 
 
 def load_pkl(name):
-    return pd.read_pickle(f"data/{name}.pkl")
+    return pd.read_pickle(Path(project_root, 'data', f"{name}.pkl"))
 
 
 def to_json(name, data):
-    with open(f"data/{name}.json", 'w') as f:
+    with open(Path(project_root, 'data', f"{name}.json"), 'w') as f:
         json.dump(data, f)
 
 
 def load_json(name):
-    print(name)
-    with open(f"data/{name}.json", 'r') as f:
+    with open(Path(project_root, 'data', f"{name}.json"), 'r') as f:
         return json.load(f)
