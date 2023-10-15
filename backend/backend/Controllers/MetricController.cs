@@ -29,7 +29,7 @@ public class MetricController: ControllerBase
     [HttpGet("Proxy/{query}")]
     public async Task<string?> GetProxyAsync(string query)
     {
-        HttpResponseMessage response = await _client.GetAsync("http://ml/"+ query);
+        HttpResponseMessage response = await _client.GetAsync("http://ml:5001/"+ query);
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadAsStringAsync();
     }
