@@ -5,7 +5,7 @@ export const ru = {
     create: "Создать",
     update: "Сохранить",
     search: "Поиск",
-    loadedMessage: "Сертификаты загружены",
+    loadedMessage: "Данные загружены",
     completedMessage: "Сертификат завершен",
     sendConfirmationMessage: "Сертификат был отправлен, отправить повторно?",
     sentMessage: "Сертификат отправлен",

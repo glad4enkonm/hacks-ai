@@ -28,6 +28,14 @@ services:
         condition: service_started
     networks:
       - wire
+
+  ml: # обработка данных с карт
+    build:
+      context: ../../ml_part # ожидаем что проект ml_part лежит на одном уровне с back
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - wire
   
   front: # статические файлы и проброс API
     depends_on:

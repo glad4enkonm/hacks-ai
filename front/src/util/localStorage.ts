@@ -1,4 +1,4 @@
-const PREFIX = 'codeGen_'
+const PREFIX = 'hackII_'
 
 export const localStorageGetMap = function(
   ...items: string[]

@@ -55,7 +55,7 @@ export default defineComponent({
         </div>
         <div className="flx">
 
-          <button class="btn btn_order btn_big" @click="createUser()"> {{ ru.user.create }}</button>
+          <button class="btn btn_order btn_big" @click="console.log"> {{ ru.user.create }}</button>
           <div className="flx-aic">
             <label>{{ "Область" }}</label>
             <div class="input-group">
@@ -73,18 +73,26 @@ export default defineComponent({
 
         <div class="table">
           <div class="table__row table__header">
-            <div class="table__row-item table__row-item-30 flx-jcc">Идентификатор</div>
+            <div class="table__row-item table__row-item-20 flx-jcc">Идентификатор</div>
             <div class="table__row-item table__row-item-30 flx-jcc">Название</div>
-            <div class="table__row-item table__row-item-30 flx-jcc">Метрика</div>
-            <div class="table__row-item table__row-item-30 flx-jcc">Дата</div>
-            <div class="table__row-item table__row-item-30 flx-jcc">Действие</div>
+            <div class="table__row-item table__row-item-10 flx-jcc">1М</div>
+            <div class="table__row-item table__row-item-10 flx-jcc">2М </div>
+            <div class="table__row-item table__row-item-10 flx-jcc">3М</div>
+            <div class="table__row-item table__row-item-10 flx-jcc">4М</div>
+            <div class="table__row-item table__row-item-10 flx-jcc">Итого</div>
+            <div class="table__row-item table__row-item-20 flx-jcc">Дата</div>
+            <div class="table__row-item table__row-item-20 flx-jcc">Действие</div>
           </div>
-          <div v-for="user in userList" class="table__row">
-            <div class="table__row-item table__row-item-30 flx-jcc">{{user.userId}}</div>
+          <div v-for="user in []" class="table__row">
+            <div class="table__row-item table__row-item-20 flx-jcc">{{user.userId}}</div>
             <div class="table__row-item table__row-item-30 flx-jcc">{{user.name}}</div>
-            <div class="table__row-item table__row-item-30 flx-jcc">{{(user.login)}}</div>
-            <div class="table__row-item table__row-item-30 flx-jcc">{{(user.description)}}</div>
-            <div class="table__row-item table__row-item-30 flx-jcc">
+            <div class="table__row-item table__row-item-10 flx-jcc">{{(user.login)}}</div>
+            <div class="table__row-item table__row-item-10 flx-jcc">{{(user.userId)}}</div>
+            <div class="table__row-item table__row-item-10 flx-jcc">{{(user.userId)}}</div>
+            <div class="table__row-item table__row-item-10 flx-jcc">{{(user.userId)}}</div>
+            <div class="table__row-item table__row-item-10 flx-jcc">{{(user.userId)}}</div>
+            <div class="table__row-item table__row-item-20 flx-jcc">{{(user.userId)}}</div>
+            <div class="table__row-item table__row-item-20 flx-jcc">
               <a href="#" class="icon" :title="ru.image.cartActionDeleteIcon" @click.prevent="deleteUser(user.userId)">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <use xlink:href="/delete.svg#Editable-line"></use>

@@ -7,9 +7,17 @@ services:
     volumes:
       - ./tmpdb:/var/lib/mysql:rw
       - ../database/Docker/utf8.cnf:/etc/mysql/conf.d/custom.cnf
-      #- ../database/MigrationsWithEnv:/docker-entrypoint-initdb.d:ro # раскомментировать для загрузки Migrations
+      - ../database/MigrationsWithEnv:/docker-entrypoint-initdb.d:ro # раскомментировать для загрузки Migrations
     env_file: .env # здесь секреты, структуру можно посмотреть в _env
     restart: unless-stopped
+    networks:
+      - wire
+
+  ml: # обработка данных с карт
+    build:
+      context: ../../ml_part # ожидаем что проект ml_part лежит на одном уровне с back
+    restart: unless-stopped
+    env_file: .env
     networks:
       - wire
 

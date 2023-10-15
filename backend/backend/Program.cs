@@ -28,6 +28,7 @@ builder.Services.AddSingleton<IUserRoleRepository, UserRoleRepository>();
 builder.Services.AddSingleton<IUserToUserRoleRepository, UserToUserRoleRepository>();
 builder.Services.AddSingleton<IUserToRefreshTokenRepository, UserToRefreshTokenRepository>();
 builder.Services.AddSingleton<IRefreshTokenRepository, RefreshTokenRepository>();
+builder.Services.AddSingleton<IMetricRepository, MetricRepository>();
 #endregion
 
 

@@ -5,6 +5,7 @@ import { doneImageInline, editImageInline , sendImageInline} from "@/util/inline
 
 <script lang="ts">
 import { useToast } from "vue-toastification";
+import metricService from "@/api/metric"
 
 const toast = useToast()
 
@@ -37,9 +38,25 @@ export default defineComponent({
       this.$router.push({name: "edit code", params: {id: codeId}})
     },
     
+    generateRandomColor() {
+      var r = Math.floor(Math.random() * 256); // Random between 0-255
+      var g = Math.floor(Math.random() * 256); // Random between 0-255
+      var b = Math.floor(Math.random() * 256); // Random between 0-255
+      var a = Math.random().toFixed(1); // Random between 0-1
+
+      var color = 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
     
-    async createCode() {
-      this.$router.push({name: "code new"})
+      return color;
+    },
+    
+    async search() {
+      //this.$router.push({name: "code new"})
+      var iframeWindow = (document as any).getElementById('f1').contentWindow;      
+
+      const data:any = await metricService.getProxy(this.searchText)
+      const coordinates = data?.data?.geometry?.coordinates ?? []
+      if (coordinates.length > 0)
+        iframeWindow.postMessage({view:coordinates[0][0], features: coordinates[0], color: this.generateRandomColor()}, '*');            
     },
     formatValue(code: any) {      
       if (this.isAdmin)
@@ -78,15 +95,16 @@ export default defineComponent({
         </div>
         <div className="flx">
 
-          <button class="btn btn_order btn_big" @click="createCode()"> {{ ru.map.create }}</button>
+          <button class="btn btn_order btn_big" @click="search()" > {{ ru.map.search }}</button>
           <div className="flx-aic">
             <label>{{ ru.map.search }}</label>
             <div class="input-group">
-              <input class="inline" type="text" required v-model="searchText" />
+              <input class="inline" @keyup.enter="search()" type="text" required v-model="searchText" />
             </div>
+            <span>пример Невский, Приморский, Адмиралтейский</span>
           </div>
         </div>
-        <iframe id="f1" ref="frame1" :src="'/map.html'"></iframe>
+        <iframe id="f1" ref="frame1" src="/map2.html"></iframe>
 
 
       </section>
